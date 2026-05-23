@@ -4,6 +4,7 @@ import { AboutSection } from "../components/landingPage/AboutSection/AboutSectio
 import { HowIWorkSection } from "../components/landingPage/HowIWorkSection/HowIWorkSection"
 import { ProjectsSection } from "../components/landingPage/ProjectsSection/ProjectsSection"
 import { ContactSection } from "../components/landingPage/ContactSection/ContactSection"
+import { ContactForm } from "../components/landingPage/ContactSection/ContactForm"
 
 export const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ export const LandingPage = () => {
       <HowIWorkSection />
       <ProjectsSection />
       <ContactSection />
+      <ContactForm/>
     </div>
   )
 }
