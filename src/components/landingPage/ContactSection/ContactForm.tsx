@@ -31,71 +31,77 @@ export const ContactForm = () => {
   return (
     <div className="container">
       <section >
-      <div className={styles.wrapper}>
-        <form
-          onSubmit={handleSubmit(submitHandler)}
-          className={styles.form}
-        >
-          <h2 className={styles.title}>Обратная связь</h2>
-
-          <input
-            className={styles.input}
-            placeholder="Имя"
-            {...register("name")}
-            disabled={isDisabled}
-          />
-          {errors.name && <p className={styles.error}>{errors.name.message}</p>}
-
-          <input
-            className={styles.input}
-            placeholder="Телефон"
-            {...register("phone")}
-            disabled={isDisabled}
-          />
-          {errors.phone && <p className={styles.error}>{errors.phone.message}</p>}
-
-          <input
-            className={styles.input}
-            placeholder="Email"
-            {...register("email")}
-            disabled={isDisabled}
-          />
-          {errors.email && <p className={styles.error}>{errors.email.message}</p>}
-
-          <textarea
-            className={styles.textarea}
-            placeholder="Комментарий"
-            {...register("comment")}
-            disabled={isDisabled}
-          />
-          {errors.comment && (
-            <p className={styles.error}>{errors.comment.message}</p>
-          )}
-
-          <button
-            type="submit"
-            className={`${styles.button} ${status === "loading" ? styles.loading : ""
-              }`}
-            disabled={isDisabled}
+        <div className={styles.wrapper}>
+          <form
+            onSubmit={handleSubmit(submitHandler)}
+            className={styles.form}
           >
-            {status === "loading" ? "Отправка..." : "Отправить"}
-          </button>
+            <h2 className={styles.title}>Обратная связь</h2>
 
-          {status === "success" && (
-            <div className={styles.success}>
-              Заявка успешно отправлена
-            </div>
-          )}
+            <input
+              className={styles.input}
+              placeholder="Имя"
+              {...register("name")}
+              disabled={isDisabled}
+            />
+            {errors.name && <p className={styles.error}>{errors.name.message}</p>}
 
-          {status === "error" && (
-            <div className={styles.errorBox}>
-              Ошибка отправки. Попробуйте позже.
-            </div>
-          )}
-        </form>
-      </div>
+            <input
+              className={styles.input}
+              placeholder="Телефон"
+              {...register("phone")}
+              disabled={isDisabled}
+            />
+            {errors.phone && <p className={styles.error}>{errors.phone.message}</p>}
+
+            <input
+              className={styles.input}
+              placeholder="Email"
+              {...register("email")}
+              disabled={isDisabled}
+            />
+            {errors.email && <p className={styles.error}>{errors.email.message}</p>}
+
+            <textarea
+              className={styles.textarea}
+              placeholder="Комментарий"
+              {...register("comment")}
+              disabled={isDisabled}
+            />
+            {errors.comment && (
+              <p className={styles.error}>{errors.comment.message}</p>
+            )}
+
+            <button
+              type="submit"
+              className={`${styles.button} ${status === "loading" ? styles.loading : ""
+                }`}
+              disabled={isDisabled}
+            >
+              {status === "loading" ? "Отправка..." : "Отправить"}
+            </button>
+
+            {status === "success" && (
+              <div className={styles.success}>
+                Заявка успешно отправлена
+              </div>
+            )}
+
+            {status === "error" && (
+              <div className={styles.errorBox}>
+                Ошибка отправки. Попробуйте позже.
+              </div>
+            )}
+          </form>
+        </div>
       </section>
+      <input
+        name="company"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+      />
     </div>
-    
+
   )
 }
