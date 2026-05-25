@@ -12,7 +12,7 @@
 
 Деплой: https://personal-landing-tan.vercel.app/
 
-GitHub: https://github.com/Kirill-Bokov/moda-lab
+GitHub: https://github.com/Kirill-Bokov/personal-landing
 
 ---
 
